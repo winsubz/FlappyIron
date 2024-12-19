@@ -1,0 +1,90 @@
+body {
+    font-family:'Courier New', Courier, monospace;
+    text-align: center;
+}
+
+#board {
+    /* background-color: skyblue; */
+    background-image: url("./flappybirdbg.png");
+}
+
+/* Footer cơ bản */
+footer {
+    position: relative; /* Không cố định toàn màn hình, chỉ trong game container */
+    width: 100%; /* Chiều rộng theo khung trò chơi */
+    max-width: 500px; /* Giới hạn chiều rộng tối đa theo canvas */
+    background-color: black; /* Nền khung màu đen */
+    color: white; /* Màu chữ */
+    padding: 10px 0; /* Khoảng cách trên dưới */
+    text-align: center; /* Căn giữa nội dung */
+    margin: 0 auto; /* Căn giữa footer trong container */
+    font-size: calc(10px + 0.5vw); /* Tự điều chỉnh kích thước chữ theo màn hình */
+    box-sizing: border-box; /* Gồm cả padding trong chiều rộng */
+}
+
+
+/* Văn bản trong footer */
+footer span {
+    color: #bebdbd; /* Màu chữ */
+    font-size: 1rem; /* Sử dụng rem thay vì px */
+    font-weight: bold; /* Đậm chữ */
+    text-decoration: none; /* Không gạch chân liên kết */
+}
+
+footer a {
+    color: #ffffff; /* Màu chữ */
+    font-size: 1rem; /* Sử dụng rem thay vì px */
+    font-weight: bold; /* Đậm chữ */
+    text-decoration: none; /* Không gạch chân liên kết */
+}
+
+@media (prefers-color-scheme: dark) {
+    footer span, footer a {
+        color: rgb(255, 255, 255); /* Chuyển sang màu trắng trong chế độ tối */
+    }
+}
+
+/* Hiệu ứng hover cho liên kết */
+footer a:hover {
+    color: #800080; /* Màu tím khi hover */
+}
+
+footer a img {
+    width: 1.125rem; /* Điều chỉnh kích thước icon với rem */
+    height: 1.125rem; /* Điều chỉnh kích thước icon với rem */
+    vertical-align: middle; /* Căn chỉnh icon với văn bản */
+}
+
+/* Tooltip */
+.tooltip {
+    position: relative; /* Định vị tooltip */
+    display: inline-block; /* Hiển thị như phần tử nội tuyến */
+    cursor: pointer; /* Con trỏ thay đổi khi hover */
+}
+
+/* Định dạng tooltip khi ẩn */
+.tooltip .tooltiptext {
+    visibility: hidden; /* Ẩn tooltip mặc định */
+    width: 13.75rem; /* Đoạn tooltip sử dụng rem */
+    background-color: #333; /* Tooltip nền đen */
+    color: #fff; /* Tooltip chữ trắng */
+    text-align: center; /* Căn giữa nội dung tooltip */
+    padding: 0.625rem; /* Khoảng cách xung quanh nội dung tooltip */
+    position: absolute; /* Định vị tuyệt đối tooltip */
+    z-index: 10000; /* Tooltip luôn trên cùng */
+    bottom: 125%; /* Đặt tooltip lên trên icon */
+    left: 50%; /* Căn giữa tooltip */
+    transform: translateX(-50%); /* Điều chỉnh vị trí ngang */
+    opacity: 0; /* Tooltip ẩn */
+    transition: opacity 0.3s ease; /* Hiệu ứng hiển thị mượt */
+    font-size: calc(8px + 0.3vw); /* Điều chỉnh kích thước chữ tooltip */
+}
+
+/* Hiển thị tooltip khi hover */
+.tooltip:hover .tooltiptext {
+    visibility: visible; /* Hiển thị tooltip */
+    opacity: 1; /* Độ mờ của tooltip */
+}
+
+
+
